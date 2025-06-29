@@ -11,6 +11,7 @@ body {
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: #333;
   min-height: 100vh;
+  padding-bottom: 80px; /* ✅ Added extra bottom padding for spacing */
 }
 
 /* Container */
@@ -80,10 +81,10 @@ nav {
   text-align: center;
   padding: 120px 20px 60px;
   color: white;
-  background: rgba(0,0,0,0.4); /* overlay for readability */
+  background: rgba(0,0,0,0.4);
   border-radius: 20px;
   max-width: 800px;
-  margin: 140px auto 40px; /* adjusted for fixed header */
+  margin: 140px auto 40px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
@@ -198,18 +199,19 @@ section {
   background: white;
   border-radius: 20px;
   padding: 20px;
-  margin: 40px 0; /* increased vertical spacing */
+  margin: 40px 0;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-  scroll-margin-top: 120px; /* offset for fixed header on anchor links */
+  scroll-margin-top: 120px;
 }
 
 /* About and Contact specific spacing */
 #about {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 #contact {
   margin-top: 40px;
+  margin-bottom: 60px; /* ✅ Added extra bottom margin for space before taskbar */
 }
 
 /* Symptom tags */
