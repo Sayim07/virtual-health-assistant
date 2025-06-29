@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HealthAI - Virtual Health Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <nav class="container">
+      <div class="logo">HealthAI</div>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="cta-btn" onclick="showSection('chat')">Start Chat</button>
+    </nav>
+  </header>
+
+  <!-- Main -->
+  <main class="container">
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <h1>Your Virtual Health Assistant</h1>
+      <p>Get instant health advice, check symptoms, schedule appointments, and access mental health resources - all powered by advanced AI technology.</p>
+      <button class="cta-btn" onclick="showSection('chat')">
+        <span class="status-online"></span>
+        Chat with AI Doctor
+      </button>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+      <div class="service-card" onclick="showSection('chat')">
+        <span class="service-icon">🤖</span>
+        <h3>AI Health Chat</h3>
+        <p>Chat with our AI-powered health assistant for instant medical advice and general health questions.</p>
+        <button class="cta-btn">Start Chat</button>
+      </div>
+
+      <div class="service-card" onclick="showSection('symptoms')">
+        <span class="service-icon">🔍</span>
+        <h3>Symptom Checker</h3>
+        <p>Describe your symptoms and get preliminary assessments with recommendations for next steps.</p>
+        <button class="cta-btn">Check Symptoms</button>
+      </div>
+
+      <div class="service-card" onclick="showSection('appointment')">
+        <span class="service-icon">📅</span>
+        <h3>Book Appointment</h3>
+        <p>Schedule consultations with certified doctors and specialists at your convenience.</p>
+        <button class="cta-btn">Book Now</button>
+      </div>
+
+      <div class="service-card" onclick="showSection('resources')">
+        <span class="service-icon">🧠</span>
+        <h3>Mental Health</h3>
+        <p>Access mental health resources, support groups, and wellness programs.</p>
+        <button class="cta-btn">Get Support</button>
+      </div>
+    </section>
+
+    <!-- Chat Interface -->
+    <section class="chat-interface" id="chat-section">
+      <div class="chat-header">
+        <h3><span class="status-online"></span>AI Health Assistant</h3>
+        <button onclick="hideSection('chat')">✕</button>
+      </div>
+      <div class="chat-messages" id="chat-messages">
+        <div class="message bot">
+          <div class="message-content">
+            Hello! I'm your AI Health Assistant. How can I assist you today?
+          </div>
+        </div>
+      </div>
+      <div class="chat-input">
+        <input type="text" id="chat-input" placeholder="Type your health question..." onkeypress="handleChatKeyPress(event)">
+        <button onclick="sendMessage()">Send</button>
+      </div>
+    </section>
+
+    <!-- Symptom Checker -->
+    <section class="symptom-checker" id="symptoms-section" style="display:none;">
+      <h2>Symptom Checker</h2>
+      <p>Select your symptoms below:</p>
+      <div class="symptom-tags">
+        <span class="symptom-tag" onclick="toggleSymptom(this)">Headache</span>
+        <span class="symptom-tag" onclick="toggleSymptom(this)">Fever</span>
+        <span class="symptom-tag" onclick="toggleSymptom(this)">Cough</span>
+        <span class="symptom-tag" onclick="toggleSymptom(this)">Fatigue</span>
+      </div>
+      <button class="cta-btn" onclick="analyzeSymptoms()">Analyze Symptoms</button>
+      <button class="cta-btn" onclick="hideSection('symptoms')">Close</button>
+      <div id="symptom-results"></div>
+    </section>
+
+    <!-- Appointment Scheduler -->
+    <section class="appointment-form" id="appointment-section" style="display:none;">
+      <h2>Book an Appointment</h2>
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email">
+      <input type="date">
+      <input type="time">
+      <button class="cta-btn">Schedule Appointment</button>
+      <button class="cta-btn" onclick="hideSection('appointment')">Close</button>
+    </section>
+
+    <!-- Mental Health Resources -->
+    <section class="resources" id="resources-section" style="display:none;">
+      <h2>Mental Health Resources</h2>
+      <p>Access mental health support and wellness tools.</p>
+      <button class="cta-btn" onclick="hideSection('resources')">Close</button>
+    </section>
+
+    <!-- ABOUT SECTION -->
+<section id="about" class="container">
+  <h2>About HealthAI</h2>
+  <p>
+    HealthAI is your virtual health assistant offering AI-powered symptom checks, health advice, mental health resources, and appointment scheduling with certified doctors. Our mission is to make healthcare accessible, fast, and reliable for everyone.
+  </p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="container">
+  <h2>Contact Us</h2>
+  <p>Name: Sayim Mullick</p>
+  <p>Email: support@healthai.com</p>
+  <p>Phone: +91 83919 28607</p>
+  <p>Address: Kolkata, West Bengal, India</p>
+</section>
+
+
+  </main>
+
+  <!-- Script -->
+  <script src="script.js"></script>
+</body>
+</html>
